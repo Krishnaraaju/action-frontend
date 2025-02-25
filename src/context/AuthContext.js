@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = useCallback(async (email, password) => {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/login`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
         return;
       }
 
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/auth/me`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/me`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
